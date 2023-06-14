@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.iit01.todolistController">
+   <children>
+      <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="156.0" layoutY="100.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="55.0" prefWidth="1100.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="296.0" layoutY="-66.0" prefHeight="134.4" prefWidth="1100.0" styleClass="top-form" stylesheets="@todolistDesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label layoutX="865.0" layoutY="18.0" text="Welcome, " textFill="WHITE" AnchorPane.rightAnchor="169.4" AnchorPane.topAnchor="18.0">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="username" layoutX="928.9999999999999" layoutY="17.0" prefHeight="19.0" prefWidth="149.0" text="Thevindu" textFill="WHITE" AnchorPane.rightAnchor="21.40000000000009" AnchorPane.topAnchor="17.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="page_label" layoutX="17.0" layoutY="13.0" text="HOME" textFill="WHITE">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="545.0" prefWidth="240.0" styleClass="nav-form" stylesheets="@todolistDesign.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button fx:id="home_btn" layoutX="10.0" layoutY="22.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="220.0" styleClass="nav-btn" stylesheets="@todolistDesign.css" text=" Home">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="myTasks_btn" layoutX="10.0" layoutY="72.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="220.0" styleClass="nav-btn" stylesheets="@todolistDesign.css" text=" My Tasks">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="LIST" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="completedTasks_btn" layoutX="10.0" layoutY="122.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="40.0" prefWidth="220.0" styleClass="nav-btn" stylesheets="@todolistDesign.css" text=" Completed Tasks">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="CHECK" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="logout_btn" layoutX="13.0" layoutY="491.0" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" prefWidth="40.0" styleClass="logout-btn" stylesheets="@todolistDesign.css" AnchorPane.bottomAnchor="13.799999999999955" AnchorPane.leftAnchor="13.0">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="2em" />
+                           </graphic>
+                        </Button>
+                        <Label layoutX="59.0" layoutY="500.0" text="Logout" textFill="WHITE" AnchorPane.bottomAnchor="23.199999999999953" AnchorPane.leftAnchor="59.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="center-form" stylesheets="@todolistDesign.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="home_form" layoutX="21.0" layoutY="24.0" prefHeight="544.8" prefWidth="860.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="22.0" prefHeight="200.0" prefWidth="832.0" styleClass="card" stylesheets="@todolistDesign.css">
+                                 <children>
+                                    <Circle layoutX="103.0" layoutY="100.0" radius="90.0" stroke="BLACK" strokeType="INSIDE" />
+                                    <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="56.0" layoutY="142.0" size="10em" />
+                                    <Label layoutX="230.0" layoutY="71.0" text="Username" textFill="WHITE">
+                                       <font>
+                                          <Font name="Tahoma" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="home_username" layoutX="401.0" layoutY="71.0" text="Thevindu" textFill="WHITE">
+                                       <font>
+                                          <Font name="Tahoma" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="230.0" layoutY="104.0" text="Date Registered" textFill="WHITE">
+                                       <font>
+                                          <Font name="Tahoma" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="home_dateRegistered" layoutX="401.0" layoutY="104.0" text="Thevindu" textFill="WHITE">
+                                       <font>
+                                          <Font name="Tahoma" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="374.0" layoutY="71.0" text=":" textFill="WHITE">
+                                       <font>
+                                          <Font name="Tahoma" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="374.0" layoutY="104.0" text=":" textFill="WHITE">
+                                       <font>
+                                          <Font name="Tahoma" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="14.0" layoutY="245.0" prefHeight="200.0" prefWidth="410.0" styleClass="card" stylesheets="@todolistDesign.css">
+                                 <children>
+                                    <Label layoutX="196.0" layoutY="159.0" text="Number of Active Tasks" textFill="WHITE">
+                                       <font>
+                                          <Font name="Tahoma" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="CLIPBOARD" layoutX="29.0" layoutY="142.0" size="10em" />
+                                    <Label fx:id="home_activeTasks" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="177.0" layoutY="14.0" prefHeight="32.0" prefWidth="208.0" text="0" textFill="WHITE">
+                                       <font>
+                                          <Font name="Tahoma" size="25.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="435.0" layoutY="245.0" prefHeight="200.0" prefWidth="410.0" styleClass="card" stylesheets="@todolistDesign.css">
+                                 <children>
+                                    <Label layoutX="247.0" layoutY="160.0" text="Completed Tasks" textFill="WHITE">
+                                       <font>
+                                          <Font name="Tahoma" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="CHECK_SQUARE_ALT" layoutX="27.0" layoutY="143.0" size="10em" />
+                                    <Label fx:id="home_completedTasks" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="175.0" layoutY="15.0" prefHeight="32.0" prefWidth="208.0" text="0" textFill="WHITE">
+                                       <font>
+                                          <Font name="Tahoma" size="25.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="myTasks_form" layoutX="196.0" layoutY="158.0" prefHeight="544.8" prefWidth="860.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="24.0" prefHeight="200.0" prefWidth="832.0" styleClass="border" stylesheets="@todolistDesign.css" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="24.0">
+                                 <children>
+                                    <Label layoutX="31.0" layoutY="28.0" text="Task:" textFill="WHITE">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextArea fx:id="myTasks_task" layoutX="31.0" layoutY="58.0" prefHeight="110.0" prefWidth="260.0" />
+                                    <Label layoutX="366.0" layoutY="28.0" text="Start Date:" textFill="WHITE">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <DatePicker fx:id="myTasks_startDate" layoutX="366.0" layoutY="58.0" />
+                                    <Label layoutX="623.0" layoutY="28.0" text="End Date:" textFill="WHITE">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <DatePicker fx:id="myTasks_endDate" layoutX="623.0" layoutY="58.0" />
+                                    <Button fx:id="myTasks_addBtn" layoutX="351.0" layoutY="132.0" mnemonicParsing="false" onAction="#myTasksAddBtn" prefHeight="35.0" prefWidth="100.0" styleClass="btn" stylesheets="@todolistDesign.css" text="Add" />
+                                    <Button fx:id="myTasks_updateBtn" layoutX="460.0" layoutY="132.0" mnemonicParsing="false" onAction="#myTasksUpdateBtn" prefHeight="35.0" prefWidth="100.0" styleClass="btn" stylesheets="@todolistDesign.css" text="Update" />
+                                    <Button fx:id="myTasks_clearBtn" layoutX="607.0" layoutY="132.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" styleClass="btn" stylesheets="@todolistDesign.css" text="Clear" />
+                                    <Button fx:id="myTasks_deleteBtn" layoutX="716.0" layoutY="132.0" mnemonicParsing="false" onAction="#myTasksDeleteBtn" prefHeight="35.0" prefWidth="100.0" styleClass="btn" stylesheets="@todolistDesign.css" text="Delete" />
+                                 </children>
+                              </AnchorPane>
+                              <TableView fx:id="myTasks_tableView" layoutX="14.0" layoutY="243.0" onMouseClicked="#myTasksSelectData" prefHeight="280.0" prefWidth="832.0" AnchorPane.bottomAnchor="21.799999999999955" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="243.0">
+                                <columns>
+                                  <TableColumn fx:id="myTasks_col_tasks" prefWidth="242.39999389648438" text="Task" />
+                                  <TableColumn fx:id="myTasks_col_startDate" prefWidth="148.79998779296875" text="Start Date" />
+                                    <TableColumn fx:id="myTasks_col_endDate" minWidth="0.79998779296875" prefWidth="147.20001220703125" text="End Date" />
+                                    <TableColumn fx:id="myTasks_col_dateCreated" prefWidth="147.199951171875" text="Date Created" />
+                                    <TableColumn fx:id="myTasks_col_status" prefWidth="146.40008544921875" text="Status" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="completedTasks_form" layoutX="177.0" layoutY="123.0" prefHeight="544.8" prefWidth="860.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <TableView fx:id="completedTasks_tableView" layoutX="14.0" layoutY="14.0" onMouseClicked="#completedTasksSelectData" prefHeight="280.0" prefWidth="832.0">
+                                 <columns>
+                                    <TableColumn fx:id="completedTasks_col_taskID" prefWidth="101.5999755859375" text="Task ID" />
+                                    <TableColumn fx:id="completedTasks_col_task" prefWidth="289.60003662109375" text="Task" />
+                                    <TableColumn fx:id="completedTasks_col_startDate" minWidth="0.79998779296875" prefWidth="147.20001220703125" text="Start Date" />
+                                    <TableColumn fx:id="completedTasks_col_endDate" prefWidth="147.199951171875" text="End Date" />
+                                    <TableColumn fx:id="completedTasks_col_status" prefWidth="146.40008544921875" text="Status" />
+                                 </columns>
+                              </TableView>
+                              <AnchorPane layoutX="192.0" layoutY="317.0" prefHeight="200.0" prefWidth="476.0" styleClass="border" stylesheets="@todolistDesign.css">
+                                 <children>
+                                    <Label layoutX="135.0" layoutY="77.0" text="Status:" textFill="WHITE">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="completedTasks_status" layoutX="189.0" layoutY="72.0" prefHeight="30.0" prefWidth="150.0" promptText="Select..." />
+                                    <Label layoutX="127.0" layoutY="28.0" text="Task ID:" textFill="WHITE">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="completedTasks_taskID" layoutX="189.0" layoutY="23.0" prefHeight="30.0" prefWidth="150.0" />
+                                    <Button fx:id="completedTasks_updateBtn" layoutX="153.0" layoutY="138.0" mnemonicParsing="false" onAction="#completedTasksUpdateBtn" prefHeight="40.0" prefWidth="170.0" styleClass="btn" stylesheets="@todolistDesign.css" text="Update" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

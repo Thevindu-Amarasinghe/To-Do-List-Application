@@ -1,0 +1,43 @@
+.bg-form{
+    -fx-background-color: linear-gradient(to bottom right, #f72585, #e69500);
+}
+
+.inner-form{
+    -fx-background-color: #fff;
+    -fx-background-radius: 10px;
+}
+
+.login-btn{
+    -fx-background-color: linear-gradient(to bottom right, #f72585, #e69500);
+    -fx-background-radius: 8px;
+    -fx-text-fill: #fff;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.login-btn:hover{
+    -fx-background-color: linear-gradient(to bottom right, #ff4c9f, #ffae19);
+}
+
+.text-field{
+    -fx-background-color: #fff;
+    -fx-border-radius: 5px;
+    -fx-border-color: #000;
+    -fx-border-width: .2px;
+}
+
+.text-field:focused{
+    -fx-border-color: #fff;
+    -fx-border-color: linear-gradient(to bottom right, #f72585, #e69500);
+    -fx-border-width: 1px;
+}
+
+.hyperlink{
+    -fx-border-color: transparent;
+    -fx-underline: false;
+    -fx-text-fill: #f72585;
+}
+
+.hyperlink:hover{
+    -fx-text-fill: #e69500;
+}
